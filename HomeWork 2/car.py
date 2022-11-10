@@ -3,8 +3,12 @@ from engine import Engine
 
 class Car(Vehicle):
 
-    def __int__(self, engine):
+    def __init__(self, engine):
+        super().__init__()
         self.engine=engine
 
-    def set_engine(self):
-        self.engine=Engine()
+    def set_engine(self, engine:Engine):
+        self.engine=engine
+
+
+
