@@ -9,7 +9,7 @@ class Vehicle:
         self.fuel_consumption = fuel_consumption
 
     def start(self):
-            if self.started:
+            if not self.started:
                 if self.fuel>0:
                     self.started = True
                 else:
@@ -19,7 +19,7 @@ class Vehicle:
     def move(self, distance=100):
         #self.distance=distance
         if self.fuel >= (self.fuel_consumption*distance)/100:
-            self.fuel = self.fuel-(self.fuel_consumption*distance)/100
+            self.fuel -= (self.fuel_consumption*distance)/100
         else:
             raise NotEnoughFuelError
         #print(self.fuel)

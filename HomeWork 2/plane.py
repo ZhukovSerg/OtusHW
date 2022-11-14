@@ -10,10 +10,10 @@ class Plane(Vehicle):
         self.max_cargo = max_cargo
 
     def load_cargo(self, pl_weight=1000):
-        if self.max_cargo >= self.cargo + pl_weight:
-            self.pl_weight = pl_weight + self.cargo
-        else:
+        if self.max_cargo < self.cargo + pl_weight:
             raise CargoOverload
+        else:
+            self.pl_weight = pl_weight + self.cargo
         print(self.pl_weight)
 
     def remove_all_cargo(self):
