@@ -9,12 +9,12 @@ class Plane(Vehicle):
         self.cargo = cargo
         self.max_cargo = max_cargo
 
-    def load_cargo(self, pl_weight=1000):
-        if self.max_cargo < self.cargo + pl_weight:
+    def load_cargo(self, extra_cargo=1000):
+        if self.max_cargo < self.cargo + extra_cargo:
             raise CargoOverload
         else:
-            self.pl_weight = pl_weight + self.cargo
-        print(self.pl_weight)
+            self.cargo += extra_cargo
+        #print(self.cargo)
 
     def remove_all_cargo(self):
         tmp = self.cargo
